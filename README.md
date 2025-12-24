@@ -38,7 +38,8 @@ pip install -r requirements.txt
 ## 🚀 Usage  
   
 ### Basic Usage Example  
-```python  from src.main import analyze_feedback
+```python
+from src.main import analyze_feedback
 
 result = analyze_feedback("data/sample.csv")
 print(result)
@@ -76,9 +77,13 @@ This structure will be updated accordingly at the final stage of the project.
   
 # 🧪 Testing  
 Run tests locally using:  
-```bash pytest ```  
+```bash 
+pytest
+```  
 Run tests with coverage:  
-```bash pytest --cov=src tests/ ```  
+```bash 
+pytest --cov=src tests/
+```  
   
 ## 🔁 CI/CD  
   
