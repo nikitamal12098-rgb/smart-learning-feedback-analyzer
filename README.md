@@ -33,15 +33,16 @@ git clone https://github.com/nikitamal12098-rgb/smart-learning-feedback-analyzer
 cd smart-learning-feedback-analyzer
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt  
-  
+pip install -r requirements.txt 
+```
 ## 🚀 Usage  
   
 ### Basic Usage Example  
 ```python  from src.main import analyze_feedback
 
 result = analyze_feedback("data/sample.csv")
-print(result) ```  
+print(result)
+```  
   
 ### What the System Produces  
 
@@ -67,7 +68,8 @@ The project currently uses the following structure:
 │   └── workflows/       # CI/CD pipelines
 ├── README.md
 ├── requirements.txt
-└── .gitignore ```  
+└── .gitignore
+```  
   
 📌 As the project develops, new modules will be added to the src/ directory.
 This structure will be updated accordingly at the final stage of the project.
