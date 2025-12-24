@@ -1,104 +1,106 @@
-# Smart Learning Feedback Analyzer
+# 📊 Smart Learning Feedback Analyzer
 
-## 📌 Description
-Smart Learning Feedback Analyzer is an NLP-based system for analyzing student feedback,
-essays, and course reviews. The project helps educators understand student sentiment,
-identify recurring problems, and gain actionable insights from textual feedback.
-
-One of the key features of the system is **automatic generation of structured reports
-for instructors**, which summarize sentiment distribution, key topics, and common issues
-highlighted by students.
+**Smart Learning Feedback Analyzer** — это Python-проект для анализа отзывов студентов с автоматической генерацией отчётов для преподавателей.  
+Проект использует идеи NLP и CI/CD и демонстрирует полный цикл:  
+от данных → анализа → отчёта → публичного деплоя.
 
 ---
 
-## 🎯 Project Goals
-- Analyze textual feedback from students using NLP techniques
-- Detect overall and per-topic sentiment
-- Identify recurring problem areas and frequently mentioned topics
-- Automatically generate clear, instructor-friendly reports
-- Support multiple languages (English and Russian)
-- Provide results in a format suitable for web deployment
+## 🌐 Live Report (GitHub Pages)
+
+👉 **Актуальный отчёт доступен по ссылке:**  
+https://nikitamal12098-rgb.github.io/smart-learning-feedback-analyzer/
+
+Отчёт автоматически:
+- генерируется из CSV с отзывами
+- обновляется через GitHub Actions
+- публикуется на GitHub Pages
 
 ---
 
-## ⚙️ Installation
+## 🎯 Основные возможности
 
-### Prerequisites
-- Python 3.8 or higher
-- pip
+- 🧠 Анализ текстовых отзывов студентов  
+- 😊 Определение тональности (sentiment analysis)  
+- 🌍 Определение языка отзывов (EN / RU)  
+- 🧩 Группировка результатов по языкам  
+- 📝 Генерация читаемого Markdown-отчёта  
+- 🔁 Автоматизация через CI/CD  
+- 🌐 Публикация отчёта как web-страницы  
 
-### Setup
-```bash
-git clone https://github.com/nikitamal12098-rgb/smart-learning-feedback-analyzer.git
-cd smart-learning-feedback-analyzer
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt 
-```
-## 🚀 Usage  
-  
-### Basic Usage Example  
-```python
-from src.main import analyze_feedback
+---
 
-result = analyze_feedback("data/sample.csv")
-print(result)
-```  
-  
-### What the System Produces  
+## 🗂 Структура проекта
 
-- Overall sentiment statistics
-
-- Key recurring topics in student feedback
-
-- Frequently mentioned issues and complaints
-
-- Automatically generated instructor report (Markdown / HTML)  
-  
-## 🗂 Current Project Structure  
-The project currently uses the following structure:  
-```graphql .
-├── src/                 # Source code (will be extended)
-│   └── __init__.py
-├── tests/               # Unit tests
-│   └── __init__.py
-├── data/                # Input and sample data
-├── docs/                # Additional documentation
-├── scripts/             # Utility scripts
+```text
+smart-learning-feedback-analyzer/
+│
 ├── .github/
-│   └── workflows/       # CI/CD pipelines
-├── README.md
+│   └── workflows/
+│       ├── tests.yml              # CI: тесты и качество кода
+│       └── deploy.yml             # Генерация отчёта и GitHub Pages
+│
+├── data/
+│   └── sample.csv                 # Пример отзывов студентов
+│
+├── docs/
+│   └── report.md                  # Сгенерированный отчёт (deploy)
+│
+├── src/
+│   ├── analyzer/
+│   │   ├── language.py            # Определение языка
+│   │   ├── sentiment.py           # Анализ тональности
+│   │   └── topics.py              # Извлечение тем
+│   │
+│   ├── report/
+│   │   └── generator.py           # Генерация Markdown-отчёта
+│   │
+│   └── main.py                    # Точка входа
+│
+├── tests/
+│   └── test_pipeline.py           # Тест полного пайплайна
+│
 ├── requirements.txt
-└── .gitignore
+├── pytest.ini
+└── README.md
 ```  
   
-📌 As the project develops, new modules will be added to the src/ directory.
-This structure will be updated accordingly at the final stage of the project.
+## ▶️ Использование  
   
-# 🧪 Testing  
-Run tests locally using:  
-```bash 
+### Локальный запуск  
+```bash
+pip install -r requirements.txt
+python src/main.py
+```
+После запуска:  
+
+- отчёт будет сгенерирован в docs/report.md  
+  
+### Запуск тестов  
+```bash
 pytest
 ```  
-Run tests with coverage:  
-```bash 
-pytest --cov=src tests/
-```  
+## ⚙️ CI/CD и автоматизация  
   
-## 🔁 CI/CD  
+В проекте настроены:
+
+- ✅ GitHub Actions для тестов
+
+- 🔁 Scheduled workflow (еженедельное обновление отчёта)
+
+- 🌐 GitHub Pages для публикации результатов
+
+Отчёт можно обновить:
+
+- вручную (Run workflow)
+
+- автоматически по расписанию  
   
-- The project uses GitHub Actions for:  
+### 🏆 Бонусные возможности (Vibe-coding)  
+-🌍 Поддержка нескольких языков (RU / EN)
 
-- automated testing and code quality checks
-
-- scheduled feedback analysis
-
-- automatic report generation
-
-- deployment of generated reports  
-
-Details of CI/CD workflows will be documented as they are added.  
+-🌐 Web-деплой результатов (GitHub Pages)  
   
-## 👤 Author  
-  
-GotLib
+## 👤 Автор  
+**GotLib**
+**GitHub: https://github.com/nikitamal12098-rgb**
